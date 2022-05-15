@@ -53,7 +53,8 @@ if(isset($_POST['submit'])){
     $email=$_POST['email'];
     $ref=$_POST['ref'];
     $job_post=$_POST['job_post'];
-    $insertquery="insert into  job_regestration values(null,`$name`,`$degree`,`$number`,`$email`,`$ref`,`$job_post`)";
+    // dumb, you use ( ` ) tilled instead of ( ' ) in query... these variables are suposed to be passed in strings...!
+    $insertquery="insert into  job_regestration values(null,'$name','$degree','$number','$email','$ref','$job_post')";
     $result=mysqli_query($con,$insertquery);
 }  
 ?>
